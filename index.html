@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adicionar Item</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+  <section class="t1">
+    <div class="d1">
+    <h1>Adicione itens para sua Lista</h1>
+    </div>
+    <p>Digite um novo item:</p>
+    <input type="text" id="item" value="">
+
+    <ol id="mylist">        
+    </ol>
+    <p>Escolha uma cor para o item</p>
+      
+      <input type="radio" name="cores" style="color: rgb(0, 0, 0)" value="black">Padrão</input>
+      <input type="radio" name="cores" style="color: rgb(177, 5, 5)" value="red">Vermelho</input>
+      <input type="radio" name="cores" style="color: rgb(255, 255, 34)" value="yellow">Amarelo</input>
+      <input type="radio" name="cores" style="color: rgb(2, 23, 94)" value="blue">Azul</input>
+      <br> 
+      <br>
+      <p>Clique para adicionar um novo item:</p>
+      <button onclick="myFunction()">Adicionar</button>
+    </div>
+    
+      <script>
+        element.addEventListener("click", myFunction);
+        function myFunction() {
+          const texto = document.getElementById("item").value;
+          const node = document.createElement("li");
+          const textnode = document.createTextNode(texto);
+          node.appendChild(textnode);
+          document.getElementById("mylist").appendChild(node);
+          let cor = "";
+          cor = document.querySelector('input[name="cores"]:checked').value
+          node.style.color = cor
+        }
+  
+      </script>
+    </section>
+</body>
+</html>
